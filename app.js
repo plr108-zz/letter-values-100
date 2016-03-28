@@ -7,30 +7,11 @@ function makeWordList(arr) {
         wordList[i] = propNames[i];
     }
 
-    bubbleSort(wordList);
-
+    console.log("Sorting...");
+    wordList.sort();
+    console.log("Displaying...");
     document.getElementById("results").innerHTML = wordList;
-}
-
-// swap, bubble sort source: https://github.com/benoitvallon/computer-science-in-javascript/blob/master/sorting-algorithms-in-javascript/bubble-sort.js
-function swap(array, i, j) {
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-}
-
-function bubbleSort(array) {
-    var swapped;
-    do {
-        swapped = false;
-        for (var i = 0; i < array.length; i++) {
-            if (array[i] && array[i + 1] && array[i] > array[i + 1]) {
-                swap(array, i, i + 1);
-                swapped = true;
-            }
-        }
-    } while (swapped);
-    return array;
+    console.log("All Done!");
 }
 
 makeWordList(dictionary);
