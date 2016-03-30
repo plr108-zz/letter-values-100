@@ -2,10 +2,12 @@ function makeWordList(arr) {
     var wordList = [];
 
     var propNames = Object.keys(arr);
+    var j = 0;
     for (var i = 0; i < propNames.length; i++) {
 
         if (/^[a-zA-Z()]+$/.test(propNames[i])) {
-            wordList[i] = propNames[i].toLowerCase();
+            wordList[j] = '"' + propNames[i].toLowerCase() + '"';
+        	j++;
         }
     }
 
