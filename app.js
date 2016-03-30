@@ -3,15 +3,14 @@ function makeWordList(arr) {
 
     var propNames = Object.keys(arr);
     for (var i = 0; i < propNames.length; i++) {
-        // add the key name to the worList
-        wordList[i] = propNames[i];
+
+        if (/^[a-zA-Z()]+$/.test(propNames[i])) {
+            wordList[i] = propNames[i].toLowerCase();
+        }
     }
 
-    console.log("Sorting...");
     wordList.sort();
-    console.log("Displaying...");
     document.getElementById("results").innerHTML = wordList;
-    console.log("All Done!");
 }
 
 makeWordList(dictionary);
