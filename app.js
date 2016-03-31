@@ -1,3 +1,5 @@
+var max_length = null;
+
 function makeWordList(arr) {
     var wordList = [];
 
@@ -6,19 +8,33 @@ function makeWordList(arr) {
     for (var i = 0; i < propNames.length; i++) {
 
         if (/^[a-zA-Z()]+$/.test(propNames[i])) {
-            wordList[j] = '"' + propNames[i].toLowerCase() + '"';
-        	j++;
+            wordList[j] = propNames[i].toLowerCase();
+            if (propNames[i].length > max_length) {
+                max_length = propNames[i].length;
+            }
+            j++;
         }
     }
 
     wordList.sort();
-    document.getElementById("results").innerHTML = wordList;
+
+    console.log("max_length: " + max_length);
+
     return wordList;
 }
 
-function makeWordValueJSON() {
+function makeWordValueJSON(wordList) {
+    var wordJSON = "[";
+    for (var i = 0; i < wordList.length; i++) {
+        wordJSON += '{"word":"' + wordList[i] + '","value":"XXX"},';
 
+    }
+    var wordJSON = wordJSON.substring(0, wordJSON.length - 1) + "]";
+
+    document.getElementById("results").innerHTML = wordJSON;
+
+    return wordJSON;
 };
 
 var list = makeWordList(dictionary);
-//makeWordValueJSON();
+var wordJSON = makeWordValueJSON(list);
