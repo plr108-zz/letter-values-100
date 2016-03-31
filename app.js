@@ -13,6 +13,12 @@ function makeWordList(arr) {
 
     wordList.sort();
     document.getElementById("results").innerHTML = wordList;
+    return wordList;
 }
 
-makeWordList(dictionary);
+function makeWordValueJSON() {
+
+};
+
+var list = makeWordList(dictionary);
+//makeWordValueJSON();
