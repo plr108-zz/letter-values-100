@@ -26,14 +26,19 @@ function makeWordList(arr) {
 function makeWordValueJSON(wordList) {
     var wordJSON = "[";
     for (var i = 0; i < wordList.length; i++) {
-        wordJSON += '{"word":"' + wordList[i] + '","value":"XXX"},';
-
+        wordJSON += '{"word":"' + wordList[i] + '","value":"';
+        wordJSON += getWordValue(wordList[i]);
+        wordJSON += '"},';
     }
     var wordJSON = wordJSON.substring(0, wordJSON.length - 1) + "]";
 
     document.getElementById("results").innerHTML = wordJSON;
 
     return wordJSON;
+};
+
+function getWordValue(word) {
+    return "XXX";
 };
 
 var list = makeWordList(dictionary);
