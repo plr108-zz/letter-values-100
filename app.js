@@ -4,7 +4,7 @@ function makeWordList(arr) {
     var wordList = [];
 
     var propNames = Object.keys(arr);
-    var j = 0;
+    var i,j = 0;
     for (var i = 0; i < propNames.length; i++) {
 
         if (/^[a-zA-Z()]+$/.test(propNames[i])) {
@@ -12,6 +12,7 @@ function makeWordList(arr) {
             if (propNames[i].length > max_length) {
                 max_length = propNames[i].length;
             }
+            i++;
             j++;
         }
     }
