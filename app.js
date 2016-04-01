@@ -19,8 +19,6 @@ function makeWordList(arr) {
 
     wordList.sort();
 
-    console.log("max_length: " + max_length);
-
     return wordList;
 }
 
@@ -38,6 +36,8 @@ function makeWordValueJSON(wordList) {
     return wordJSON;
 };
 
+// return the "value" of a word by summing the value of each letter in the word:
+// {a=1,b=2,c=3,...}
 function getWordValue(word) {
     var count = 0;
     var alphabet = [];
