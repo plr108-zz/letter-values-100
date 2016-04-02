@@ -80,5 +80,16 @@ function getWordValue(word) {
     return count;
 };
 
-var list = makeWordList(dictionary);
-var wordJSON = makeWordValueJSON(list);
+var viewModel = {
+
+    init : function() {
+
+    }
+
+};
+
+// Initialize the viewModel
+viewModel.init();
+
+// activate Knockout
+ko.applyBindings(viewModel);
