@@ -82,10 +82,16 @@ function getWordValue(word) {
 
 var viewModel = {
 
-    init : function() {
+    visibleWordValues: ko.observableArray(),
+    init: function() {
+        // show all words with a value of 100
+        for (var i = 0; i < wordValues.length; i++) {
+            if (wordValues[i].value === "100") {
 
+                viewModel.visibleWordValues.push(wordValues[i]);
+            }
+        }
     }
-
 };
 
 // Initialize the viewModel

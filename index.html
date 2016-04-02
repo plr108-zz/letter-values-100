@@ -8,9 +8,13 @@
 </head>
 
 <body>
-	<div id="results"></div>
-	<script src="js/knockout.js"></script>
-    <script src="js/dictionary.js"></script>
+    <div id="results">
+        <ul data-bind="foreach: viewModel.visibleWordValues">
+            <li><span data-bind="text: word"></span> = <span data-bind="text: value"</li>
+        </ul>
+    </div>
+    <script src="js/knockout.js"></script>
+    <script src="js/wordValues.js"></script>
     <script src="js/app.js"></script>
 </body>
 
