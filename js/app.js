@@ -84,9 +84,14 @@ var viewModel = {
 
     visibleWordValues: ko.observableArray(),
     init: function() {
-        // show all words with a value of 100
+        // to start, show all words with a value of 100
+        viewModel.showWordsWithValue("100");
+    },
+
+    showWordsWithValue: function(value) {
+        // show all words with the selected value
         for (var i = 0; i < wordValues.length; i++) {
-            if (wordValues[i].value === "100") {
+            if (wordValues[i].value === value) {
 
                 viewModel.visibleWordValues.push(wordValues[i]);
             }
