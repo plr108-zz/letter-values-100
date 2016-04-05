@@ -91,8 +91,17 @@ var viewModel = {
                 viewModel.visibleWordValues.push(wordValues[i]);
             }
         }
-    }
+    },
+
+    valueQuery: ko.observable()
 };
+
+viewModel.valueQuery.subscribe(function(newValue) {
+
+    console.log("Display results for value: " + newValue);
+});
+
+
 
 // Initialize the viewModel
 viewModel.init();
