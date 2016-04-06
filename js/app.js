@@ -89,6 +89,9 @@ var viewModel = {
     },
 
     showWordsWithValue: function(value) {
+
+        viewModel.visibleWordValues([]);
+
         // show all words with the selected value
         for (var i = 0; i < wordValues.length; i++) {
             if (wordValues[i].value === value) {
@@ -106,6 +109,7 @@ viewModel.valueQuery.subscribe(function(value) {
     if (Number(value) === Math.floor(value)) {
         if (value > 0) {
             console.log("Show words where value = " + value);
+            viewModel.showWordsWithValue(value);
         } else {
             alert(value + " is not greater than zero");
         }
