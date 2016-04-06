@@ -101,12 +101,18 @@ var viewModel = {
     valueQuery: ko.observable()
 };
 
-viewModel.valueQuery.subscribe(function(newValue) {
+viewModel.valueQuery.subscribe(function(value) {
 
-    console.log("Display results for value: " + newValue);
+    if (Number(value) === Math.floor(value)) {
+        if (value > 0) {
+            console.log("Show words where value = " + value);
+        } else {
+            alert(value + " is not greater than zero");
+        }
+    } else {
+        alert(value + " is not an integer");
+    }
 });
-
-
 
 // Initialize the viewModel
 viewModel.init();
